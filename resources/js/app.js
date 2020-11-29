@@ -13,6 +13,7 @@ Vue.use(VueRouter)
 
 let routes = [
     { path: '/dashboard', component: require('./components/Dashboard').default },
+    { path: '/users', component: require('./components/Users').default },
     { path: '/profile', component: require('./components/Profile').default }
 ]
 
