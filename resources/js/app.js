@@ -11,6 +11,13 @@ window.Vue = require('vue');
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
+import { Form, HasError, AlertError } from 'vform'
+
+window.Form = Form;
+// enregistre them globaly
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
+
 let routes = [
     { path: '/dashboard', component: require('./components/Dashboard').default },
     { path: '/users', component: require('./components/Users').default },
