@@ -11,6 +11,8 @@ window.Vue = require('vue');
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
+import moment from 'moment'
+
 import { Form, HasError, AlertError } from 'vform'
 
 window.Form = Form;
@@ -27,6 +29,15 @@ let routes = [
 const router = new VueRouter({
     routes, // short for `routes: routes`
     mode: "history"
+})
+
+// Global filters:
+Vue.filter('upText', function(text) {
+    return text.charAt(0).toUpperCase() + text.slice(1)
+})
+
+Vue.filter('myDate', function(created) {
+    return moment(created).format('MMMM Do YYYY')
 })
 
 
